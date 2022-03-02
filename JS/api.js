@@ -1,4 +1,4 @@
-
+// load data... 
 
 const searchPhone = () => {
     const searchInput = document.getElementById('search-input');
@@ -8,12 +8,15 @@ const searchPhone = () => {
     fetch(url)
         .then(response => response.json())
         .then(data => displaySearchResult(data.data))
+
+    // clean data .....
     searchInput.value = '';
 
 }
 
 const displaySearchResult = phoneItems => {
     const searchResult = document.getElementById('searchCardItem');
+    searchResult.innerHTML = '';
     phoneItems.forEach(phoneItem => {
         console.log(phoneItem);
         const div = document.createElement('div');
@@ -47,6 +50,8 @@ const displayPhoneDetails = phoneDetails => {
     console.log(phoneDetails)
     const mainfuture = phoneDetails.mainFeatures;
     const mobileDetails = document.getElementById('phone-datails-single');
+    // clear data .....
+    mobileDetails.textContent = '';
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML = `
