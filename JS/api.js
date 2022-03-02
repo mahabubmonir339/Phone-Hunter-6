@@ -47,8 +47,9 @@ const detailsButton = detailsButtonId => {
         .then(data => displayPhoneDetails(data.data))
 }
 const displayPhoneDetails = phoneDetails => {
-    console.log(phoneDetails)
     const mainfuture = phoneDetails.mainFeatures;
+    const sensors = mainfuture.sensors;
+    console.log(sensors);
     const mobileDetails = document.getElementById('phone-datails-single');
     // clear data .....
     mobileDetails.textContent = '';
@@ -57,15 +58,16 @@ const displayPhoneDetails = phoneDetails => {
     div.innerHTML = `
     <img src="${phoneDetails.image}" class="card-img-top" style="width: 18rem;" alt="...">
                 <div class="card-body">
-                    <h2>Name:${phoneDetails.name} </h2>
-                    <h2>Brand:${phoneDetails.brand} </h2>
-                    <h2>ReleaseDate:${phoneDetails.releaseDate} </h2>
-                    <h2>slug:${phoneDetails.siug} </h2>
+                    <h2>Name:  ${phoneDetails.name} </h2>
+                    <h2>Brand:  ${phoneDetails.brand} </h2>
+                    <h2>ReleaseDate:  ${phoneDetails.releaseDate} </h2>
+                    <h2>slug:  ${phoneDetails.slug} </h2>
                     <h2>MainFeatures:</h2>
                     <p> class="card-text" Store: ${mainfuture.storage} </p>
                     <p> class="card-text" displaySize: ${mainfuture.displaySize} </p>
                     <p> class="card-text" chipSet: ${mainfuture.chipSet} </p>
                     <p> class="card-text" memory: ${mainfuture.memory} </p> 
+                    
                 </div>
 
     `;
