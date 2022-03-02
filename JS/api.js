@@ -1,19 +1,4 @@
-// function loadFetch() {
-//     fetch(' https://openapi.programming-hero.com/api/phone/apple_iphone_13_pro_max-11089')
-//         .then(response => response.json())
-//         .then(data => displayResult(data))
-// }
-// loadFetch();
-// const LoadFetchArrow = () => {
-//     fetch(' https://openapi.programming-hero.com/api/phone/${id}')
-//         .then(response => response.json())
-//         .then(data => displayResult(data))
-// }
-// LoadFetchArrow();
-// const displayResult = (data) => {
-//     const monir = data;
-//     console.log(monir);
-// }
+
 
 const searchPhone = () => {
     const searchInput = document.getElementById('search-input');
@@ -26,6 +11,7 @@ const searchPhone = () => {
     searchInput.value = '';
 
 }
+
 const displaySearchResult = phoneItems => {
     const searchResult = document.getElementById('searchCardItem');
     phoneItems.forEach(phoneItem => {
@@ -39,11 +25,46 @@ const displaySearchResult = phoneItems => {
                             <h5 class="card-title">${phoneItem.phone_name}</h5>
                             <p class="card-text"> Brand: ${phoneItem.brand} </p>
                             <p class="card-text"> slug: ${phoneItem.slug}</p>
-                            <button id="card-button" class="btn btn-primary">Details</button>
+                            <button onclick="detailsButton('${phoneItem.slug}')" id="card-button" class="btn btn-primary">Details</button>
                         </div>
                     </div>
         `;
         searchResult.appendChild(div);
+
     });
 
 }
+
+// Phone Deatils ............
+
+const detailsButton = detailsButtonId => {
+    const urlDetails = `https://openapi.programming-hero.com/api/phone/${detailsButtonId}`
+    fetch(urlDetails)
+        .then(res => res.json())
+        .then(data => displayPhoneDetails(data.data))
+}
+const displayPhoneDetails = phoneDetails => {
+    console.log(phoneDetails)
+    const mainfuture = phoneDetails.mainFeatures;
+    const mobileDetails = document.getElementById('phone-datails-single');
+    const div = document.createElement('div');
+    div.classList.add('card');
+    div.innerHTML = `
+    <img src="${phoneDetails.image}" class="card-img-top" style="width: 18rem;" alt="...">
+                <div class="card-body">
+                    <h2>Name:${phoneDetails.name} </h2>
+                    <h2>Brand:${phoneDetails.brand} </h2>
+                    <h2>ReleaseDate:${phoneDetails.releaseDate} </h2>
+                    <h2>slug:${phoneDetails.siug} </h2>
+                    <h2>MainFeatures:</h2>
+                    <p> class="card-text" Store: ${mainfuture.storage} </p>
+                    <p> class="card-text" displaySize: ${mainfuture.displaySize} </p>
+                    <p> class="card-text" chipSet: ${mainfuture.chipSet} </p>
+                    <p> class="card-text" memory: ${mainfuture.memory} </p> 
+                </div>
+
+    `;
+    mobileDetails.appendChild(div);
+
+}
+
