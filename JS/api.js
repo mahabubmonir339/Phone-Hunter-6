@@ -18,7 +18,6 @@ const displaySearchResult = phoneItems => {
     const searchResult = document.getElementById('searchCardItem');
     searchResult.innerHTML = '';
     phoneItems.forEach(phoneItem => {
-        console.log(phoneItem);
         const div = document.createElement('div');
         div.classList.add('col-3');
         div.innerHTML = `
