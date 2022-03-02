@@ -20,11 +20,12 @@
         <nav class="navbar navbar-light bg-light container" style="background-color: #e3f2fd;">
             <div class="container">
                 <a class="navbar-brand">GSM Corner</a>
-                <form class="d-flex">
-                    <input id="search-input" class="form-control me-2" type="search" placeholder="Search"
+                <div class="d-flex">
+                    <input id="search-input" class="div-control me-2" type="search" placeholder="Search"
                         aria-label="Search">
-                    <button id="search-button" class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                    <button onclick="searchPhone()" id="search-button" class="btn btn-outline-success"
+                        type="submit">Search</button>
+                </div>
             </div>
         </nav>
     </head>
@@ -32,8 +33,8 @@
         <!-- bootstrap Card -->
         <section>
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-3 card card-style">
+                <div id="searchCardItem" class="row justify-content-center">
+                    <!-- <div class="col-3 card card-style">
                         <img src="Photo/04.jpg" class="card-img-top mt-3" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -44,7 +45,7 @@
                             <button id="card-button" class="btn btn-primary">Details</button>
                         </div>
                     </div>
-                    <!-- Extra  -->
+                    -- Extra  --
                     <div class="col-4 card card-style">
                         <img src="Photo/05.jpg" class="card-img-top mt-3" alt="...">
                         <div class="card-body">
@@ -55,110 +56,14 @@
                                 card's content.</p>
                             <button class="btn btn-primary">Details</button>
                         </div>
-                    </div>
-                    <div class="col-4 card card-style">
-                        <img src="Photo/06.jpg" class="card-img-top mt-3" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the
-                                card's content.</p>
-                            <button class="btn btn-primary">Details</button>
-                        </div>
-                    </div>
-                    <div class="col-4 card card-style">
-                        <img src="Photo/07.jpg" class="card-img-top mt-3" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the
-                                card's content.</p>
-                            <button class="btn btn-primary">Details</button>
-                        </div>
-                    </div>
-                    <div class="col-4 card card-style">
-                        <img src="Photo/07.jpg" class="card-img-top mt-3" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the
-                                card's content.</p>
-                            <button class="btn btn-primary">Details</button>
-                        </div>
-                    </div>
-                    <div class="col-4 card card-style">
-                        <img src="Photo/07.jpg" class="card-img-top mt-3" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the
-                                card's content.</p>
-                            <button class="btn btn-primary">Details</button>
-                        </div>
-                    </div>
-                    <div class="col-4 card card-style">
-                        <img src="Photo/07.jpg" class="card-img-top mt-3" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the
-                                card's content.</p>
-                            <button class="btn btn-primary">Details</button>
-                        </div>
-                    </div>
-                    <div class="col-4 card card-style">
-                        <img src="Photo/07.jpg" class="card-img-top mt-3" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the
-                                card's content.</p>
-                            <button class="btn btn-primary">Details</button>
-                        </div>
-                    </div>
-                    <div class="col-4 card card-style">
-                        <img src="Photo/07.jpg" class="card-img-top mt-3" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the
-                                card's content.</p>
-                            <button class="btn btn-primary">Details</button>
-                        </div>
-                    </div>
-                    <div class="col-4 card card-style">
-                        <img src="Photo/07.jpg" class="card-img-top mt-3" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the
-                                card's content.</p>
-                            <button class="btn btn-primary">Details</button>
-                        </div>
-                    </div>
-                    <div class="col-4 card card-style">
-                        <img src="Photo/07.jpg" class="card-img-top mt-3" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the
-                                card's content.</p>
-                            <button class="btn btn-primary">Details</button>
-                        </div>
-                    </div>
+                    </div>  -->
+
                 </div>
+
             </div>
         </section>
     </main>
+    <script src="JS/api.js"></script>
 </body>
 
 </html>
