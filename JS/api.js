@@ -54,14 +54,14 @@ const displayPhoneDetails = phoneDetails => {
     // clear data .....
     mobileDetails.textContent = '';
     const div = document.createElement('div');
-    div.classList.add('card');
+    div.classList.add('d-flex', 'card');
     div.innerHTML = `
-    <img src="${phoneDetails.image}" class="card-img-top" style="width: 18rem;" alt="...">
+                    <img src="${phoneDetails.image}" class="card-img-top" style="width: 18rem;" alt="...">
                 <div class="card-body">
-                    <h2>Name:  ${phoneDetails.name} </h2>
-                    <h2>Brand:  ${phoneDetails.brand} </h2>
-                    <h2>ReleaseDate:  ${phoneDetails.releaseDate} </h2>
-                    <h2>slug:  ${phoneDetails.slug} </h2>
+                    <h2>Name:<h4>${phoneDetails.name}</h4> </h2>
+                    <h2>Brand:  <h4>${phoneDetails.brand}</h4> </h2>
+                    <h2>ReleaseDate:  <h4>${phoneDetails.releaseDate}</h4> </h2>
+                    <h2>slug:  <h4>${phoneDetails.slug}</h4> </h2>
                     <h2>MainFeatures:</h2>
                     <p> class="card-text" Store: ${mainfuture.storage} </p>
                     <p> class="card-text" displaySize: ${mainfuture.displaySize} </p>
